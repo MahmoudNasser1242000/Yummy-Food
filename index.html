@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/meal (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- =========font awesome========= -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- =========font awesome========= -->
+
+    <!-- =========bootstrap========= -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- =========bootstrap========= -->
+
+    <!-- =========fonts========= -->
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nerko+One&display=swap" rel="stylesheet">
+    <!-- =========fonts========= -->
+    <title>Yummy Food</title>
+</head>
+
+<body>
+    <!-- ================nav================ -->
+    <nav>
+        <div class="links-section h-100">
+            <ul class="p-0 links">
+                <li id="search"><span>Search</span></li>
+                <li id="categories"><span>Categories</span></li>
+                <li id="area"><span>Area</span></li>
+                <li id="ingredient"><span>Ingredient</span></li>
+                <li id="contact"><span>Contact Us</span></li>
+            </ul>
+        </div>
+
+        <div class="key-toggle h-100">
+            <a href="index.html">
+                <img src="images/tongue-out.png" class="w-100 logo" alt="logo">
+            </a>
+            <!-- <span class="fs-1 fw-bolder open-close">&#x2630;</span> -->
+            <img src="images/menu-button.png" class="open-close w-100" alt="menu">
+            <div>
+                <p class="m-0 fs-5"><i class="fa-solid fa-share-nodes"></i></p>
+                <p class="m-0 fs-5"><i class="fa-solid fa-globe"></i></p>
+            </div>
+        </div>
+    </nav>
+    <!-- ================nav================ -->
+
+    <!-- ================serach================ -->
+    <section class="search pt-4">
+        <div class="container mx-auto row">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <input type="text" class="form-control rounded-1 search-name" placeholder="Search By Name">
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control rounded-1 search-letter" maxlength="1"
+                    placeholder="Search By First Letter">
+            </div>
+        </div>
+    </section>
+    <!-- ================serach================ -->
+
+    <!-- ================meals================ -->
+    <section class="meals-section">
+        <section class="loading">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </section>
+        <section class="container meals py-4 mx-auto row">
+
+        </section>
+    </section>
+    <!-- ================meals================ -->
+
+    <!-- ================conatct================ -->
+    <form class="flex-column justify-content-center align-items-center">
+        <h1 class="text-center py-4 text-warning">Contact us</h1>
+        <section class="row g-4 p-4">
+            <div class="mb-3 col-12">
+                <input type="text" class="form-control rounded-1" id="name" placeholder="Enter Your Name">
+                <div class="invalid-feedback">
+                    Name should be at least 3 char, Special characters and numbers not allowed
+                </div>
+            </div>
+            <div class="mb-3 col-12">
+                <input type="email" class="form-control rounded-1" id="email" placeholder="Enter Your Email">
+                <div class="invalid-feedback">
+                    Email not valid *exemple@yyy.zzz
+                </div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <input type="password" class="form-control rounded-1" id="pass" placeholder="Enter Your password">
+                <div class="invalid-feedback">
+                    Password should be at least 8 characters, At least 1 letter and 1 number
+                </div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <input type="password" class="form-control rounded-1" id="repass" placeholder="Confirm Password">
+                <div class="invalid-feedback">
+                    Enter the valid password
+                </div>
+            </div>
+            <div class="mb-3 col-12">
+                <input type="tel" class="form-control rounded-1" id="phone" placeholder="Enter Your Phone">
+                <div class="invalid-feedback">
+                    Enter valid Phone Number
+                </div>
+            </div>
+            <div class="mb-3 col-12">
+                <input type="number" class="form-control rounded-1" id="age" placeholder="Enter Your Age">
+                <div class="invalid-feedback">
+                    Enter valid age
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-warning text-white mx-auto disabled">Contact Us</button>
+        </section>
+    </form>
+    <!-- ================conatct================ -->
+
+    <!-- ================meal-info================ -->
+    <section class="meal-info d-flex justify-content-center align-items-center py-4 overflow-auto">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+
+        <section class="container mx-auto g-4 ">
+            <div class="pt-3 d-flex justify-content-end">
+                <span class="close text-warning d-inline-block fs-2 fw-bolder">&#x2718;</span>
+            </div>
+            <div class="row show-info">
+                
+            </div>
+        </section>
+    </section>
+    <!-- ================meal-info================ -->
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

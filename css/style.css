@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font: 'Courgette', cursive;
+    --second-font: 'Nerko One', cursive;
+}
+
+body {
+    background-color: black !important;
+    height: 100vh !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none !important;
+}
+
+/* ===========================nav=========================== */
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -208px;
+    display: flex;
+    z-index: 1000;
+}
+
+nav .links-section {
+    width: 208px;
+    padding: 24px 0;
+    background-color: black;
+}
+
+.links-section ul {
+    overflow: hidden;
+}
+
+.links-section ul li {
+    position: relative;
+    top: 300px;
+    padding: 12px 24px;
+}
+
+.links-section ul li span {
+    font-size: 20px;
+    color: white;
+    transition: all 0.5s;
+    display: inline-block;
+    font-family: var(--main-font);
+}
+.links-section ul li span:hover {
+    color: #FF9800;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+nav .key-toggle {
+    width: 55px;
+    padding: 24px 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    transition: all 0.4s;
+}
+.logo:hover {
+    transform: scale(1.11);
+}
+
+.key-toggle .open-close {
+    cursor: context-menu;
+}
+/* ===========================nav=========================== */
+
+/* ===========================search=========================== */
+.search {
+    display: none;
+}
+
+.search input {
+    border-color: white !important;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.61) !important; 
+}
+.search input:focus {
+    box-shadow: none !important;
+    background-color: black;
+}
+
+.search input::placeholder {
+    color: rgba(255, 255, 255, 0.61) !important;
+}
+/* ===========================search=========================== */
+
+/* ===========================meals=========================== */
+.meals-section,
+.search {
+    padding-left: 56px;
+}
+
+.meal {
+    overflow-x: hidden !important;
+}
+
+.meal .meal-name {
+    font-family: var(--second-font);
+    top: 120%;
+    font-size: 42px;
+    color: white;
+    background: rgba(26, 45, 75, 0.781);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.5s;
+}
+.meal:hover .meal-name {
+    top: 0;
+}
+
+.meal img {
+    vertical-align: middle;
+}
+
+.area,
+.ingredient {
+    cursor: pointer;
+}
+
+.area h2,
+.ingredient h2 {
+    font-family: var(--second-font);
+}
+
+/* ==========loading========== */
+.loading {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    z-index: 500;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sk-folding-cube {
+    margin: 20px auto;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    background-color: #FF9800;
+}
+
+.sk-folding-cube .sk-cube {
+float: left;
+width: 50%;
+height: 50%;
+position: relative;
+-webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+        transform: scale(1.1); 
+}
+.sk-folding-cube .sk-cube:before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: black;
+-webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+        animation: sk-foldCubeAngle 2.4s infinite linear both;
+-webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+-webkit-transform: scale(1.1) rotateZ(90deg);
+        transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+-webkit-transform: scale(1.1) rotateZ(180deg);
+        transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+-webkit-transform: scale(1.1) rotateZ(270deg);
+        transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+-webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+-webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s; 
+}
+.sk-folding-cube .sk-cube4:before {
+-webkit-animation-delay: 0.9s;
+        animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+} 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+} 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+} 
+}
+
+@keyframes sk-foldCubeAngle {
+0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+} 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+} 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+}
+}
+/* ==========loading========== */
+/* ===========================meals=========================== */
+
+/* ===========================contact=========================== */
+
+form {
+    padding-left: 56px;
+    display: none;
+}
+
+form h1 {
+    font-family: var(--main-font);
+    font-size: 60px !important;
+}
+
+form section {
+    width: 50%;
+}
+
+form button {
+    width: 150px !important;
+    padding: 5px 10px !important;
+    font-size: 25px !important;
+    font-family: var(--second-font) !important;
+}
+
+/* ===========madia query=========== */
+@media screen and (max-width: 600px) {
+    form section {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    form section {
+        width: 75%;
+    }
+}
+/* ===========madia query=========== */
+/* ===========================contact=========================== */
+
+/* ===========================meal-info=========================== */
+.meal-info {
+    padding-left: 56px;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(58, 73, 123, 0.658);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    display: none;
+}
+
+.meal-info * {
+    font-family: var(--second-font);
+}
+
+.meal-info img {
+    width: 100%;
+    height: 400px;
+}
+
+.meal-info .close {
+    cursor: context-menu;
+    transition: all 0.5s;
+}
+.meal-info .close:hover {
+    transform: scale(1.1);
+}
+
+.meal-ingredient span {
+    margin-right: 10px;
+    font-size: 14px;
+}
+/* ===========================meal-info=========================== */
