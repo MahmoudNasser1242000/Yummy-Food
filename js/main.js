@@ -72,12 +72,6 @@ function closeMealInfo() {
 }
 
 $(function () {
-    // ====================loading===================
-    $(".loading").slideUp(1000)
-    $(".sk-folding-cube").fadeOut(500)
-    $(".meal-info").removeClass("d-flex")
-    // ====================loading===================    
-
     // ====================nav====================
     function closeSidebar() {
         $("nav").animate({ left: -208 }, 700);
@@ -158,6 +152,12 @@ $(function () {
         }
 
         $(".meals").html(mealsContainer);
+
+        // ===============loading===============
+        $(".loading").slideUp(1000);
+        $(".sk-folding-cube").fadeOut(500);
+        $(".meal-info").removeClass("d-flex");
+        // ===============loading===============
     };
     getMeals(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=",
@@ -169,12 +169,12 @@ $(function () {
     $("#search").on("click", () => {
         $(".meals").html("");
         $(".search").css("display", "block");
+        $("form").css("display", "none")
 
         closeMealInfo();
     })
 
     $(".search-name").on("keyup", () => {
-        console.log($(".search-name").val());
         getMeals(
             `https://www.themealdb.com/api/json/v1/1/search.php?s=${$(".search-name").val()}`,
             "searchMeals"
@@ -192,6 +192,7 @@ $(function () {
     // ====================all categories====================
     $("#categories").on("click", () => {
         $(".search").css("display", "none");
+        $("form").css("display", "none")
 
         closeMealInfo();
 
@@ -205,6 +206,7 @@ $(function () {
     // ====================Area====================
     $("#area").on("click", () => {
         $(".search").css("display", "none");
+        $("form").css("display", "none")
 
         closeMealInfo();
 
@@ -218,6 +220,7 @@ $(function () {
     // ====================ingredient====================
     $("#ingredient").on("click", () => {
         $(".search").css("display", "none");
+        $("form").css("display", "none")
 
         closeMealInfo();
 
