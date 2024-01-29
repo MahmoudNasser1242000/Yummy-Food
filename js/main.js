@@ -104,6 +104,16 @@ $(function () {
 
     // ====================meals====================
     const getMeals = async (url, type) => {
+        // ===============loading===============
+        $(".meals").html(`<section class="loading">
+                            <div class="sk-folding-cube">
+                                <div class="sk-cube1 sk-cube"></div>
+                                <div class="sk-cube2 sk-cube"></div>
+                                <div class="sk-cube4 sk-cube"></div>
+                                <div class="sk-cube3 sk-cube"></div>
+                            </div>
+                        </section>`);
+        // ===============loading===============
         const meals = await fetch(url);
         const res = await meals.json();
         // console.log(res.meals);
@@ -152,12 +162,6 @@ $(function () {
         }
 
         $(".meals").html(mealsContainer);
-
-        // ===============loading===============
-        $(".loading").slideUp(1000);
-        $(".sk-folding-cube").fadeOut(500);
-        $(".meal-info").removeClass("d-flex");
-        // ===============loading===============
     };
     getMeals(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=",
@@ -182,10 +186,17 @@ $(function () {
     })
 
     $(".search-letter").on("keyup", () => {
-        getMeals(
-            `https://www.themealdb.com/api/json/v1/1/search.php?f=${$(".search-letter").val()}`,
-            "searchMeals"
-        );
+        if ($(".search-letter").val() !== "") {
+            getMeals(
+                `https://www.themealdb.com/api/json/v1/1/search.php?f=${$(".search-letter").val()}`,
+                "searchMeals"
+            );
+        } else {
+            getMeals(
+                `https://www.themealdb.com/api/json/v1/1/search.php?s=${$(".search-letter").val()}`,
+                "searchMeals"
+            );
+        }
     })
     // ====================search meals====================
 

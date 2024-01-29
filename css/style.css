@@ -145,7 +145,7 @@ nav .key-toggle {
 
 /* ==========loading========== */
 .loading {
-    position: fixed;
+    position: absolute;
     inset: 0;
     height: 100%;
     z-index: 500;
