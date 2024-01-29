@@ -55,6 +55,7 @@ nav .links-section {
     display: inline-block;
     font-family: var(--main-font);
 }
+
 .links-section ul li span:hover {
     color: #FF9800;
     transform: scale(1.1);
@@ -74,6 +75,7 @@ nav .key-toggle {
 .logo {
     transition: all 0.4s;
 }
+
 .logo:hover {
     transform: scale(1.11);
 }
@@ -81,6 +83,7 @@ nav .key-toggle {
 .key-toggle .open-close {
     cursor: context-menu;
 }
+
 /* ===========================nav=========================== */
 
 /* ===========================search=========================== */
@@ -91,8 +94,9 @@ nav .key-toggle {
 .search input {
     border-color: white !important;
     background-color: black;
-    color: rgba(255, 255, 255, 0.61) !important; 
+    color: rgba(255, 255, 255, 0.61) !important;
 }
+
 .search input:focus {
     box-shadow: none !important;
     background-color: black;
@@ -101,6 +105,7 @@ nav .key-toggle {
 .search input::placeholder {
     color: rgba(255, 255, 255, 0.61) !important;
 }
+
 /* ===========================search=========================== */
 
 /* ===========================meals=========================== */
@@ -125,6 +130,7 @@ nav .key-toggle {
     -webkit-backdrop-filter: blur(5px);
     transition: all 0.5s;
 }
+
 .meal:hover .meal-name {
     top: 0;
 }
@@ -144,18 +150,18 @@ nav .key-toggle {
 }
 
 /* ==========loading========== */
-.loading {
+.meals .loading,
+.show-info .loading {
     position: absolute;
     inset: 0;
     height: 100%;
     z-index: 500;
-    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sk-folding-cube {
+.meals .sk-folding-cube {
     margin: 20px auto;
     width: 70px;
     height: 70px;
@@ -165,84 +171,134 @@ nav .key-toggle {
     background-color: #FF9800;
 }
 
+.show-info .sk-folding-cube {
+    margin: 20px auto;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    background-color: transparent;
+}
+
 .sk-folding-cube .sk-cube {
-float: left;
-width: 50%;
-height: 50%;
-position: relative;
--webkit-transform: scale(1.1);
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
-        transform: scale(1.1); 
+    transform: scale(1.1);
 }
-.sk-folding-cube .sk-cube:before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: black;
--webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
-        animation: sk-foldCubeAngle 2.4s infinite linear both;
--webkit-transform-origin: 100% 100%;
+
+.meal .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
     -ms-transform-origin: 100% 100%;
-        transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
 }
+
+.show-info .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
 .sk-folding-cube .sk-cube2 {
--webkit-transform: scale(1.1) rotateZ(90deg);
-        transform: scale(1.1) rotateZ(90deg);
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    transform: scale(1.1) rotateZ(90deg);
 }
+
 .sk-folding-cube .sk-cube3 {
--webkit-transform: scale(1.1) rotateZ(180deg);
-        transform: scale(1.1) rotateZ(180deg);
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    transform: scale(1.1) rotateZ(180deg);
 }
+
 .sk-folding-cube .sk-cube4 {
--webkit-transform: scale(1.1) rotateZ(270deg);
-        transform: scale(1.1) rotateZ(270deg);
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    transform: scale(1.1) rotateZ(270deg);
 }
+
 .sk-folding-cube .sk-cube2:before {
--webkit-animation-delay: 0.3s;
-        animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
+
 .sk-folding-cube .sk-cube3:before {
--webkit-animation-delay: 0.6s;
-        animation-delay: 0.6s; 
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
+
 .sk-folding-cube .sk-cube4:before {
--webkit-animation-delay: 0.9s;
-        animation-delay: 0.9s;
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
 }
+
 @-webkit-keyframes sk-foldCubeAngle {
-0%, 10% {
-    -webkit-transform: perspective(140px) rotateX(-180deg);
-            transform: perspective(140px) rotateX(-180deg);
-    opacity: 0; 
-} 25%, 75% {
-    -webkit-transform: perspective(140px) rotateX(0deg);
-            transform: perspective(140px) rotateX(0deg);
-    opacity: 1; 
-} 90%, 100% {
-    -webkit-transform: perspective(140px) rotateY(180deg);
-            transform: perspective(140px) rotateY(180deg);
-    opacity: 0; 
-} 
+
+    0%,
+    10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
 }
 
 @keyframes sk-foldCubeAngle {
-0%, 10% {
-    -webkit-transform: perspective(140px) rotateX(-180deg);
-            transform: perspective(140px) rotateX(-180deg);
-    opacity: 0; 
-} 25%, 75% {
-    -webkit-transform: perspective(140px) rotateX(0deg);
-            transform: perspective(140px) rotateX(0deg);
-    opacity: 1; 
-} 90%, 100% {
-    -webkit-transform: perspective(140px) rotateY(180deg);
-            transform: perspective(140px) rotateY(180deg);
-    opacity: 0; 
+
+    0%,
+    10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
 }
-}
+
 /* ==========loading========== */
 /* ===========================meals=========================== */
 
@@ -281,6 +337,7 @@ form button {
         width: 75%;
     }
 }
+
 /* ===========madia query=========== */
 /* ===========================contact=========================== */
 
@@ -306,9 +363,12 @@ form button {
 
 .meal-info .close {
     cursor: context-menu;
+    color: white !important;
     transition: all 0.5s;
 }
+
 .meal-info .close:hover {
+    color: #FF9800 !important;
     transform: scale(1.1);
 }
 
@@ -316,4 +376,9 @@ form button {
     margin-right: 10px;
     font-size: 14px;
 }
+
+.show-info {
+    position: relative;
+}
+
 /* ===========================meal-info=========================== */

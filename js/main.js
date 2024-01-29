@@ -5,6 +5,16 @@ async function mealInfo (id) {
     $("body").css("overflow-y", "hidden");
     $(".meal-info").css("display", "block");
 
+    $(".show-info").addClass("d-flex", "justify-content-center", "align-items-center");
+    $(".show-info").html(`<section class="loading">
+                            <div class="sk-folding-cube">
+                                <div class="sk-cube1 sk-cube"></div>
+                                <div class="sk-cube2 sk-cube"></div>
+                                <div class="sk-cube4 sk-cube"></div>
+                                <div class="sk-cube3 sk-cube"></div>
+                            </div>
+                        </section>`);
+
     const data = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     const res = await data.json();
     const meal = res.meals[0];
@@ -56,6 +66,8 @@ async function mealInfo (id) {
                             <a class="btn btn-primary rounded-1" href="${meal.strSource !== null? meal.strSource : "#"}" target="_blank" role="button">Source</a>
                             <a class="btn btn-danger rounded-1 ms-2" href="${meal.strYoutube}" target="_blank" role="button">Youtupe</a>
                         </div>`);
+
+    $(".show-info").removeClass("d-flex", "justify-content-center", "align-items-center");
 
     $("nav").animate({ left: -208 }, 700);
     $(".open-close").attr("src", "images/menu-button.png");
