@@ -234,7 +234,7 @@ $(function () {
     $("#area").on("click", () => {
         $(".search").css("display", "none");
         $("form").css("display", "none");
-        $(".meals-section").removeClass("h-100");
+        $(".meals-section").addClass("h-100");
 
         closeMealInfo();
 
@@ -249,7 +249,7 @@ $(function () {
     $("#ingredient").on("click", () => {
         $(".search").css("display", "none");
         $("form").css("display", "none");
-        $(".meals-section").removeClass("h-100")
+        $(".meals-section").addClass("h-100")
 
         closeMealInfo();
 
