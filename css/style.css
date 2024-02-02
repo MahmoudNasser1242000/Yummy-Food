@@ -161,7 +161,7 @@ nav .key-toggle {
     align-items: center;
 }
 
-.meals .sk-folding-cube {
+.sk-folding-cube {
     margin: 20px auto;
     width: 70px;
     height: 70px;
@@ -191,7 +191,7 @@ nav .key-toggle {
     transform: scale(1.1);
 }
 
-.meal .sk-folding-cube .sk-cube:before {
+.sk-folding-cube .sk-cube:before {
     content: '';
     position: absolute;
     top: 0;

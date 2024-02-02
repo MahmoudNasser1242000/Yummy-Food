@@ -183,14 +183,16 @@ $(function () {
 
     // ====================search meals====================
     $("#search").on("click", () => {
-        $(".meals").html("");
         $(".search").css("display", "block");
-        $("form").css("display", "none")
+        $(".meals").html("");
+        $(".meals-section").removeClass("h-100")
+        $("form").css("display", "none");
 
         closeMealInfo();
     })
 
     $(".search-name").on("keyup", () => {
+        $(".meals-section").addClass("h-100")
         getMeals(
             `https://www.themealdb.com/api/json/v1/1/search.php?s=${$(".search-name").val()}`,
             "searchMeals"
@@ -198,6 +200,7 @@ $(function () {
     })
 
     $(".search-letter").on("keyup", () => {
+        $(".meals-section").addClass("h-100")
         if ($(".search-letter").val() !== "") {
             getMeals(
                 `https://www.themealdb.com/api/json/v1/1/search.php?f=${$(".search-letter").val()}`,
@@ -215,7 +218,8 @@ $(function () {
     // ====================all categories====================
     $("#categories").on("click", () => {
         $(".search").css("display", "none");
-        $("form").css("display", "none")
+        $("form").css("display", "none");
+        $(".meals-section").addClass("h-100")
 
         closeMealInfo();
 
@@ -229,7 +233,8 @@ $(function () {
     // ====================Area====================
     $("#area").on("click", () => {
         $(".search").css("display", "none");
-        $("form").css("display", "none")
+        $("form").css("display", "none");
+        $(".meals-section").removeClass("h-100");
 
         closeMealInfo();
 
@@ -243,7 +248,8 @@ $(function () {
     // ====================ingredient====================
     $("#ingredient").on("click", () => {
         $(".search").css("display", "none");
-        $("form").css("display", "none")
+        $("form").css("display", "none");
+        $(".meals-section").removeClass("h-100")
 
         closeMealInfo();
 
@@ -258,6 +264,7 @@ $(function () {
     $("#contact").on("click", () => {
         $(".search").css("display", "none");
         $(".meals-section").html("");
+        $(".meals-section").removeClass("h-100")
         $("form").css("display", "flex")
 
         $("body").css("overflow-y", "auto");
